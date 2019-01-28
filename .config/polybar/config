@@ -1,0 +1,27 @@
+;=====================================================
+;     File Includes
+;=====================================================
+
+[section/base]
+include-file = /home/albrechtc/.config/polybar/master.conf
+include-file = /home/albrechtc/.config/polybar/modules.conf
+
+;------------------------------------------------------------------------------;
+;							        B A R S										                               ;
+;------------------------------------------------------------------------------;
+[bar/top]
+inherit = bar/master
+width = 100%
+height = 15
+fixed-center = false
+monitor = DVI-D-0
+
+background = ${colors.background}
+foreground = ${colors.color8}
+
+modules-left = workspaces arrowws
+modules-right =  ${env:POLYBAR_MODULES:arrowtitle title arrownet network wired-network arrowcpu cpu arrowmemory memory arrowfs filesystem arrowvolume volume arrowdate date}
+
+tray-position = none
+tray-background = ${colors.background}
+tray-padding = 0
